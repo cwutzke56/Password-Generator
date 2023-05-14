@@ -30,9 +30,9 @@ function generatePassword(){
   passwordLength = prompt("how long do you want your password to be? (between 8 and 128 characters)" );
   console.log("Password length is " + passwordLength);
 
-  //parameters of input
+  //parameters of input input
   if(!passwordLength){
-    alert("no value");
+    alert("cancelled password generation");
     console.log("no inputed value");
   } else if(passwordLength < 8 || passwordLength > 128){
     passwordLength = prompt("you must choose between 8 and 128 characters");
@@ -45,7 +45,45 @@ function generatePassword(){
     console.log("Number = " + confirmNumber);
     confirmSpecial = confirm("Will this contain special characters?");
     console.log("Special Character = " + confirmSpecial);
-  }
+  };
+
+//creation of new array via concat given user input
+
+if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
+  alert("password invalid, please input criteria");
+}else if(confirmLowerCase && confirmNumber && confirmSpecial && confirmUpperCase){
+  userchoice = lowerCase.concat(upperCase, numbers, special);
+  console.log(userchoice);
+}else if(confirmLowerCase && confirmNumber && confirmUpperCase){
+  userchoice = lowerCase.concat(upperCase, numbers);
+  console.log(userchoice);
+}else if(confirmLowerCase && confirmNumber && confirmSpecial){
+
+}else if(confirmLowerCase && confirmSpecial && confirmUpperCase){
+
+}else if(confirmNumber && confirmSpecial && confirmUpperCase){
+
+}else if(confirmLowerCase && confirmNumber){
+
+}else if(confirmLowerCase && confirmSpecial){
+
+}else if(confirmLowerCase && confirmUpperCase){
+
+}else if(confirmNumber && confirmSpecial){
+
+}else if(confirmNumber && confirmUpperCase){
+
+}else if(confirmSpecial && confirmUpperCase){
+
+}else if(confirmUpperCase){
+
+}else if(confirmLowerCase){
+
+}else if(confirmNumber){
+
+}else if(confirmSpecial){
+  
+}
 
 
 }
