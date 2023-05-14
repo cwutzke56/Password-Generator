@@ -47,7 +47,7 @@ function generatePassword(){
     console.log("Special Character = " + confirmSpecial);
   };
 
-//creation of new array via concat given user input
+//creation of new array(userchoice) via concat given user input
 
 if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   alert("password invalid, please input criteria");
@@ -58,32 +58,50 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   userchoice = lowerCase.concat(upperCase, numbers);
   console.log(userchoice);
 }else if(confirmLowerCase && confirmNumber && confirmSpecial){
-
+  userchoice = lowerCase.concat(number && special);
+  console.log(userchoice);
 }else if(confirmLowerCase && confirmSpecial && confirmUpperCase){
-
+  userchoice = lowerCase.concat(upperCase && special);
+  console.log(userchoice);
 }else if(confirmNumber && confirmSpecial && confirmUpperCase){
-
+  userchoice = number.concat(upperCase && special);
+  console.log(userchoice);
 }else if(confirmLowerCase && confirmNumber){
-
+  userchoice = lowerCase.concat(number);
+  console.log(userchoice);
 }else if(confirmLowerCase && confirmSpecial){
-
+  userchoice = lowerCase.concat(special);
+  console.log(userchoice);
 }else if(confirmLowerCase && confirmUpperCase){
-
+  userchoice = lowerCase.concat(upperCase);
+  console.log(userchoice);
 }else if(confirmNumber && confirmSpecial){
-
+  userchoice = number.concat(special);
+  console.log(userchoice);
 }else if(confirmNumber && confirmUpperCase){
-
+  userchoice = number.concat(upperCase);
+  console.log(userchoice);
 }else if(confirmSpecial && confirmUpperCase){
-
+  userchoice = special.concat(upperCase);
+  console.log(userchoice);
 }else if(confirmUpperCase){
-
+  userchoice = upperCase;
+  console.log(userchoice);
 }else if(confirmLowerCase){
-
+  userchoice = lowerCase;
+  console.log(userchoice);
 }else if(confirmNumber){
-
+  userchoice = number;
+  console.log(userchoice);
 }else if(confirmSpecial){
-  
+  userchoice = special;
+  console.log(userchoice);
 }
 
+for(var i=0; i<passwordLength; i++){
+  var randomPassword = userchoice[Math.floor(Math.random()* userchoice.length)];
+  console.log(randomPassword);
+}
 
+return randomPassword;
 }
