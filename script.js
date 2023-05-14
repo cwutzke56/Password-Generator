@@ -29,4 +29,23 @@ function generatePassword(){
   //user input for length
   passwordLength = prompt("how long do you want your password to be? (between 8 and 128 characters)" );
   console.log("Password length is " + passwordLength);
+
+  //parameters of input
+  if(!passwordLength){
+    alert("no value");
+    console.log("no inputed value");
+  } else if(passwordLength < 8 || passwordLength > 128){
+    passwordLength = prompt("you must choose between 8 and 128 characters");
+  } else{
+    confirmLowerCase = confirm("Will this contain lower case letters?");
+    console.log("Lower case = " + confirmLowerCase);
+    confirmUpperCase = confirm("Will this contain upper case letters?");
+    console.log("Upper case = " + confirmUpperCase);
+    confirmNumber = confirm("Will this contain numbers?");
+    console.log("Number = " + confirmNumber);
+    confirmSpecial = confirm("Will this contain special characters?");
+    console.log("Special Character = " + confirmSpecial);
+  }
+
+
 }
