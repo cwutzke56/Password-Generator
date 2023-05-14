@@ -91,7 +91,7 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   userchoice = lowerCase;
   console.log(userchoice);
 }else if(confirmNumber){
-  userchoice = number;
+  userchoice = numbers;
   console.log(userchoice);
 }else if(confirmSpecial){
   userchoice = special;
