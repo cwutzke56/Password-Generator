@@ -10,7 +10,7 @@ var userchoice;
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = [0,1,2,3,4,5,6,7,8,9];
-var special = ["!","@","#","$","%","^","7","*","(",")","-","_","+","=","<",">"]
+var special = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","<",">"]
 
 // Write password to the #password input
 function writePassword() {
@@ -58,16 +58,16 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   userchoice = lowerCase.concat(upperCase, numbers);
   console.log(userchoice);
 }else if(confirmLowerCase && confirmNumber && confirmSpecial){
-  userchoice = lowerCase.concat(number && special);
+  userchoice = lowerCase.concat(numbers && special);
   console.log(userchoice);
 }else if(confirmLowerCase && confirmSpecial && confirmUpperCase){
   userchoice = lowerCase.concat(upperCase && special);
   console.log(userchoice);
 }else if(confirmNumber && confirmSpecial && confirmUpperCase){
-  userchoice = number.concat(upperCase && special);
+  userchoice = numbers.concat(upperCase && special);
   console.log(userchoice);
 }else if(confirmLowerCase && confirmNumber){
-  userchoice = lowerCase.concat(number);
+  userchoice = lowerCase.concat(numbers);
   console.log(userchoice);
 }else if(confirmLowerCase && confirmSpecial){
   userchoice = lowerCase.concat(special);
@@ -76,10 +76,10 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   userchoice = lowerCase.concat(upperCase);
   console.log(userchoice);
 }else if(confirmNumber && confirmSpecial){
-  userchoice = number.concat(special);
+  userchoice = numbers.concat(special);
   console.log(userchoice);
 }else if(confirmNumber && confirmUpperCase){
-  userchoice = number.concat(upperCase);
+  userchoice = numbers.concat(upperCase);
   console.log(userchoice);
 }else if(confirmSpecial && confirmUpperCase){
   userchoice = special.concat(upperCase);
@@ -98,9 +98,13 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   console.log(userchoice);
 }
 
+//new array to hold all new generation
+var randomPassword =[];
+//for loop for random generation 
 for(var i=0; i<passwordLength; i++){
-  var randomPassword = userchoice[Math.floor(Math.random()* userchoice.length)];
-  console.log(randomPassword);
+  var randomPasswordvalue = userchoice[Math.floor(Math.random()* userchoice.length)];
+  console.log(randomPasswordvalue);
+  randomPassword.push(randomPasswordvalue)
 }
 
 return randomPassword;
