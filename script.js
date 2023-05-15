@@ -1,16 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//declaring of my variables
-var passwordLength;
-var confirmLowerCase;
-var confirmUpperCase;
-var confirmNumber;
-var confirmSpecial;
-var userchoice;
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var numbers = [0,1,2,3,4,5,6,7,8,9];
-var special = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","<",">"]
 
 // Write password to the #password input
 function writePassword() {
@@ -26,6 +15,17 @@ generateBtn.addEventListener("click", writePassword);
 
 //generation of the password given via parameters
 function generatePassword(){
+  //declaring of my variables
+  var passwordLength;
+  var confirmLowerCase;
+  var confirmUpperCase;
+  var confirmNumber;
+  var confirmSpecial;
+  var userchoice;
+  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  var numbers = [0,1,2,3,4,5,6,7,8,9];
+  var special = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","<",">"]
   //user input for length
   passwordLength = prompt("how long do you want your password to be? (between 8 and 128 characters)" );
   console.log("Password length is " + passwordLength);
@@ -98,13 +98,14 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
   console.log(userchoice);
 }
 
-//new array to hold all new generation
+//new array to hold all new generation for my for loop
 var randomPassword =[];
 //for loop for random generation 
 for(var i=0; i<passwordLength; i++){
   var randomPasswordvalue = userchoice[Math.floor(Math.random()* userchoice.length)];
   console.log(randomPasswordvalue);
-  randomPassword.push(randomPasswordvalue)
+  randomPassword.push(randomPasswordvalue);
+  console.log(randomPassword);
 }
 
 return randomPassword;
