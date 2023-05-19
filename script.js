@@ -100,13 +100,13 @@ if(!confirmLowerCase && !confirmNumber && !confirmSpecial && !confirmUpperCase){
 
 //new array to hold all new generation for my for loop
 var randomPassword =[];
-//for loop for random generation 
+//for loop for random generation
 for(var i=0; i<passwordLength; i++){
   var randomPasswordvalue = userchoice[Math.floor(Math.random()* userchoice.length)];
   console.log(randomPasswordvalue);
-  randomPassword.push(randomPasswordvalue);
+  randomPassword.push(randomPasswordvalue)
   console.log(randomPassword);
 }
 
-return randomPassword;
+return randomPassword.join("");
 }
